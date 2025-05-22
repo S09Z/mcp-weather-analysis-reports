@@ -1,13 +1,21 @@
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-import os
 
-def upload_to_drive(filepath):
-    gauth = GoogleAuth()
-    gauth.LocalWebserverAuth()  # ใช้ครั้งแรกต้องเปิด browser เพื่อ auth
+gauth = GoogleAuth()
+gauth.LoadCredentialsFile("mycreds.txt")
 
-    drive = GoogleDrive(gauth)
-    file = drive.CreateFile({'title': os.path.basename(filepath)})
-    file.SetContentFile(filepath)
-    file.Upload()
-    return file['alternateLink']
+if gauth.credentials is None:
+    # ต้อง auth ครั้งแรก
+    gauth.LocalWebserverAuth()
+elif gauth.access_token_expired:
+    gauth.Refresh()
+else:
+    gauth.Authorize()
+
+gauth.SaveCredentialsFile("mycreds.txt")
+
+drive = GoogleDrive(gauth)
+f = drive.CreateFile({'title': "myfile.png"})
+f.SetContentFile("path/to/myfile.png")
+f.Upload()
+print("Uploaded to:", f['alternateLink'])
