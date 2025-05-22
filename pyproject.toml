@@ -1,0 +1,24 @@
+[project]
+name = "mcp-weather-analysis-reports"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ittichai Boonyarakthunya",email = "i.boonyarakthunya@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "matplotlib (>=3.10.3,<4.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "pydrive (>=1.3.1,<2.0.0)",
+    "pytest (>=8.3.5,<9.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
