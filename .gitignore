@@ -1,0 +1,50 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.env/
+.envrc
+.venv/
+
+# dotenv environment variables
+*.env
+
+# Poetry
+poetry.lock
+
+# Pip
+pip-log.txt
+
+# macOS
+.DS_Store
+
+# Pytest
+.pytest_cache/
+.cache/
+coverage.xml
+htmlcov/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Excel output / reports
+*.xlsx
+*.xls
+*.png
+*.csv
+
+# Google Auth token cache
+token_*.json
+credentials.json
+
+# Other logs
+*.log
